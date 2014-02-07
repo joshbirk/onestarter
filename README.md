@@ -1,7 +1,7 @@
 #OneStarter
 ==========
 
-A jQuery plugin for easily making HTML appear in the style of Salesforce1.  OneStarter utilizes CSS from the Salesforce1 style guide here;
+A jQuery plugin for easily making HTML appear in the style of Salesforce1.  OneStarter utilizes CSS from the Salesforce1 style guide here:
 
 http://sfdc-styleguide.herokuapp.com/
 
@@ -27,7 +27,11 @@ You can just have:
 </ul>
 ```
 
-And style the div using OneStarter.
+And style the div using OneStarter.  The plugin also includes the ability to mimic or control various S1 navigation points, include:
+
+* Enabling / Disabling the Submit
+* Closing an Action
+* Carousel style divs
 
 
 

@@ -21,12 +21,18 @@ However, instead of having to port a wide variety of css classes, a la:
 You can just have:
 
 ```html
+<div id="one-app">
 <h2>Basic List Example</h2>
 <ul class="list-simple">
 	<li class="list-simple">Item 1</li>
 	<li class="list-simple">Item 2</li>
 	<li class="list-simple">Item 3</li>
 </ul>
+</div>
+
+<script>
+	$('div#one-app').oneStarter('app');
+</script>
 ```
 
 And style the div using OneStarter.  The plugin also includes the ability to mimic or control various S1 navigation points, including:

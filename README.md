@@ -1,6 +1,9 @@
 # OneStarter
 
-A jQuery plugin for easily making HTML appear in the style of Salesforce1.  OneStarter utilizes CSS from the Salesforce1 style guide here:
+A jQuery plugin for easily making HTML appear in the style of Salesforce1.  This ReadMe offers a quick start, you can also browse the `examples` directory for examples of using it in Visualforce, and the `staticresources` directory provides the necessary files to run (including TouchSwipe, etc).
+
+
+OneStarter utilizes CSS from the Salesforce1 style guide here:
 
 http://sfdc-styleguide.herokuapp.com/
 
@@ -130,4 +133,4 @@ s1 = $('div#one-app').oneStarter('global-action');
 s1.carousel($('div#one-carousel'));
 ```
 
-       	
+

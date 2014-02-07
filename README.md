@@ -87,4 +87,47 @@ The plugin returns an object which includes methods for enabling and disabling t
 Will enable the submit button on load, and on click enact the Remote Action method in Apex.  Then it will close the action / disable the submit button.
 
 ## Creating Carousel Divs
+Salesforce1 makes frequent use of carousels for touch friendly sections of content which can be navigated right to left.  OneStarter leverages another jQuery plugin, TouchSwipe, to achieve this effect by styling and controlling the divs correctly as well as adding the bullet style page indicator.
 
+Generating the divs is another method off the oneStarter return object.  Nest divs within a parent div:
+
+
+```html
+<div id="one-carousel" >
+
+			<div id="basic-list">
+				<h2>Basic List Example</h2>
+				<ul class="list-simple">
+					<li class="list-simple">Item 1</li>
+					<li class="list-simple">Item 2</li>
+					<li class="list-simple">Item 3</li>
+				</ul>
+
+			</div>
+
+			<div id="record-list">
+				<h2>Record List Example</h2>
+				<article class="padded">
+					<div class="icon icon-left icon--contact"></div>
+					My Contacts
+				</article>
+				<article class="padded">
+					<div class="icon icon-left icon--account"></div>
+					My Accounts
+				</article>
+				<article class="padded">
+					<div class="icon icon-left icon--opportunity"></div>
+					My Opportunity
+				</article>
+			</div>
+</div>
+```
+
+And then call the carousel method:
+
+```javascript
+s1 = $('div#one-app').oneStarter('global-action');
+s1.carousel($('div#one-carousel'));
+```
+
+       	

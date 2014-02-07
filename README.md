@@ -58,6 +58,8 @@ To apply the baseline CSS to your page, wrap your content in a single div and th
 ```	
 ## Additional Styles
 OneStarter can typically style base HTML elements like H1 and input fields, there are a few additional styles to detail elements:
+
+
 | Class | Element | Effect|
 |-------|---------|--------|
 |padded | article, section, div, span | forces a 5px padding |

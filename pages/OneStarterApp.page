@@ -1,0 +1,173 @@
+<apex:page showHeader="false" >
+<apex:stylesheet value="{!URLFOR($Resource.OneStarter,'icons.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.OneStarter,'styles.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.OneStarter,'OneStarter.css')}"/>
+
+<!-- JavaScript files -->
+<apex:includeScript value="{!URLFOR($Resource.jquery)}"/>
+<apex:includeScript value="{!URLFOR($Resource.TouchSwipe,'jquery.touchSwipe.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.OneStarter,'jquery.onestarter.js')}"/>
+<apex:includeScript value="/canvas/sdk/js/publisher.js"/>      
+
+<script>
+	//this is implementation code
+	$(document).ready(function() {
+   		
+       	s1 = $('div#one-app').oneStarter('app');
+      	s1.carousel($('div#one-carousel'));
+       	
+
+       	});
+ </script>   
+
+
+<div id="one-app">
+	<h1>One Starter jQuery Plugin</h1>
+	<article class="padded">
+		This is a sample application using the One Starter jQuery plugin.
+	</article>
+
+	
+	<div id="one-carousel" >
+
+			<div id="basic-list">
+				<h2>Basic List Example</h2>
+				<ul class="list-simple">
+					<li class="list-simple">Item 1</li>
+					<li class="list-simple">Item 2</li>
+					<li class="list-simple">Item 3</li>
+				</ul>
+
+			</div>
+
+			<div id="record-list">
+				<h2>Record List Example</h2>
+				<article class="padded">
+					<div class="icon icon-left icon--contact"></div>
+					My Contacts
+				</article>
+				<article class="padded">
+					<div class="icon icon-left icon--account"></div>
+					My Accounts
+				</article>
+				<article class="padded">
+					<div class="icon icon-left icon--opportunity"></div>
+					My Opportunity
+				</article>
+			</div>
+
+
+			<div id="related-list">
+				<h2>Related List Example</h2>
+  				<article >
+  				<header><h1>My Accounts</h1>
+  						<a href="javascript:void(0)" title="More" class="link-right">
+					      <span class="link-label">More</span>
+					      <span class="link-icon-right icon-utility-right"></span>
+					    </a>
+  				</header>
+	  				<section class="padded">
+	  				<div class="icon icon-right icon-float-right icon--account"></div>
+					        <h1 class="simple-bold">
+					            United Partners, Inc.
+					        </h1>
+					  <ul class="list-plain">
+					    <li >San Francisco, CA</li>
+					    <li >Enterprise Customer</li>
+					  </ul>
+					</section>
+					<section class="padded">
+	  				<div class="icon icon-right icon-float-right icon--account"></div>
+					        <h1 class="simple-bold">
+					            United Partners, Inc.
+					        </h1>
+					  <ul class="list-plain">
+					    <li >San Francisco, CA</li>
+					    <li >Enterprise Customer</li>
+					  </ul>
+					</section>
+					<section class="padded">
+	  				<div class="icon icon-right icon-float-right icon--account"></div>
+					        <h1 class="simple-bold">
+					            United Partners, Inc.
+					        </h1>
+					  <ul class="list-plain">
+					    <li >San Francisco, CA</li>
+					    <li >Enterprise Customer</li>
+					  </ul>
+					</section>
+				</article>
+
+
+			</div>
+
+			<div id="form-example">
+				<h2>Form Example</h2>
+				<button>Set Defaults</button>
+				<section>
+					<label class="field-label">Text Field</label>
+					<input id="text-example" type="text" />
+				</section>
+				<section>
+					<label class="field-label">Text Area</label>
+					<textarea></textarea>
+				</section>
+				<section>
+					<label class="field-label">Picklist</label>
+					<select>
+						<option>Option 1</option>
+						<option>Option 2</option>
+						<option>Option 3</option>
+					</select>
+				</section>
+				<section>
+					<label class="field-label">Checkbox</label>
+					<input type="checkbox" />
+					<label class="f4 text-color-1">
+					    Boolean
+					 </label>
+					 <br />
+				</section>
+				<section>
+					<label class="field-label">Radio Group</label>
+					<input type="radio" id="radio_text" name="radio_test" /><span class="a-mid">Option 1</span><br />
+					<br />
+					<input type="radio" id="radio_text" name="radio_test" /><span class="a-mid">Option 2</span><br />
+					<br />
+					<input type="radio" id="radio_text" name="radio_test" /><span class="a-mid">Option 3</span><br />
+					<br />
+				</section>
+				<section>
+					<label class="field-label">Search</label>
+					<label class="size-full icon-utility-search pos-abs label--lookup">
+					    <span class="dn">Lookup</span>
+					</label>
+				  <input type="text" name="default" placeholder="Lookup" 
+				  class="size-full plm prx pvm input input--default input--ph-1 input--focus-1" />
+				</section>
+			</div>
+
+			<div id="detail-example">
+				<h2>Detail Example</h2>
+				<section>
+					<label class="field-label">Text Field</label>
+					<span class="field-value">Last Name, First Name</span>
+				</section>
+				<section>
+					<label class="field-label">Text Area</label>
+					<span class="field-value">This is a bunch of text here.</span>
+				</section>
+			</div>
+
+			<div id="icon-library">
+				<h2>Icon Library</h2>
+				
+			</div>
+	</div>
+
+
+</div>
+
+
+
+</apex:page>

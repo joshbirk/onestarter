@@ -1,0 +1,30 @@
+<apex:page showHeader="false" StandardController="Scorecard__c" Extensions="EmailScorecard" >
+<apex:stylesheet value="{!URLFOR($Resource.OneStarter,'icons.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.OneStarter,'styles.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.OneStarter,'OneStarter.css')}"/>
+<apex:includeScript value="{!URLFOR($Resource.jquery)}"/>
+<apex:includeScript value="{!URLFOR($Resource.OneStarter,'jquery.onestarter.js')}"/>
+<apex:includeScript value="/canvas/sdk/js/publisher.js"/>      
+<style>
+  h1 { display: block; }
+</style>
+<script>
+  $(document).ready(function() {
+   		
+       	s1 = $('div#one-app').oneStarter('record-action').enableSubmit(function() {
+            EmailScorecard.createEmail("{!Scorecard__c.Id}",function(res, mes) {
+     			  s1.close();
+            s1.disableSubmit();
+        		}); 
+            });
+            
+    	});
+</script>    
+<div id="one-app">
+        <h1>Email to List</h1>
+        <article class="padded">Click submit to email this Scorecard to developerevangelism@salesforce.com</article>
+        <article class="padded">
+          <apex:outputText value="{!public_header}" escape="false" />
+        </article>
+</div>
+</apex:page>

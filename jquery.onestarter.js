@@ -48,6 +48,13 @@
                         $('.one-app-dynamic button').addClass('btn bg-secondary-btn btn--secondary pvs size-full brm border border--2 text-color-4 f3 fw-semibold');
                         $('.one-app-dynamic button').css('height','32px');
                         
+                        $('.one-app-dynamic .btn').addClass('btn bg-secondary-btn btn--secondary pvs size-full brm border border--2 text-color-4 f3 fw-semibold');
+                        $('.one-app-dynamic .btn').css('height','32px');
+                        
+                        //lookup icons dont really work
+                        $('.one-app-dynamic .lookupIcon').css('display','none');
+                                                
+
                         //fields and text fields
                         $('.one-app-dynamic section').addClass('one-field-section');
                         $('.one-app-dynamic :text').addClass('mbm size-full phm pvm input input--default input--ph-1 input--focus-1');
@@ -56,6 +63,7 @@
                         $('.one-app-dynamic select').addClass('mbm size-full phm pvm input input--default input--ph-1 input--focus-1');
                         
                         $('.one-app-dynamic .lookup').before('<label class="size-full icon-utility-search pos-abs label--lookup"><span class="dn">Lookup</span></label>');
+                        $('.one-app-dynamic .lookupInput :text').before('<label class="size-full icon-utility-search pos-abs label--lookup"><span class="dn">Lookup</span></label>');
 
                         //divs and sections
                         $('.one-app-dynamic article').addClass('mam bg-1 border border--3 brm');
@@ -80,7 +88,7 @@
                         //this.setCarousel($('div#one-carousel'));
                     }
                _s1.prototype.close = function() {
-                        loadSfdc.canvas.publisher.publish({name: "publisher.close",payload:{ refresh:"true" }});
+                        Sfdc.canvas.publisher.publish({name: "publisher.close",payload:{ refresh:"true" }});
                     }  
                _s1.prototype.enableSubmit = function(callback) {
                         if(document.URL.indexOf('apex') < 0) {
@@ -96,12 +104,12 @@
                              $('#dyn_one_submit').click(callback);
 
                         } else { //one.app
-
+                          setTimeout(function () {
                              Sfdc.canvas.publisher.publish({name: "publisher.setValidForSubmit", payload:"true"});
                              Sfdc.canvas.publisher.subscribe({name: "publisher.post", onData:function(e) {
                                 callback();
                              }});
-
+                            },500); 
                         }
                        
                     

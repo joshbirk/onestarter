@@ -153,21 +153,21 @@
                     var count = ele.children('div').length;
 
                     for(var x = 0; x < count; x++) {
-                      ele.parent().prev().append('<li class="sq-14 lh-14 a-mid js-indicator-body"><a href="javascript:void(0)" class="sq-7 bg-9 brc is_4 js-indicator-body-a" ><span class="tha">-+-</span></a></li>');
+                      ele.parent().prev().append('<li class="sq-14 lh-14 a-mid js-indicator-body"><a href="javascript:selectCDiv('+x+')" class="sq-7 bg-9 brc is_4 js-indicator-body-a" ><span class="tha">-+-</span></a></li>');
                       }
 
                     $(".one-body-content").siblings().hide();
-                  currentDiv_body = $(".one-body-content").siblings().first();
-                  currentDiv_body.show();
-                  
-                  $(".js-indicator-body-a").removeClass('bg-10');
-                  $(".js-indicator-body-a").removeClass('ig_2');
-                  currentIndicator_body = $(".js-indicator-body").siblings().first();
-                  currentIndicator_body.children(0).addClass('bg-10');
-                  currentIndicator_body.children(0).addClass('ig-2');
-                  currentIndicator_body.children(0).removeClass('bg-9');
-                  currentIndicator_body.children(0).removeClass('is_4');
-  
+                    currentDiv_body = $(".one-body-content").siblings().first();
+                    currentDiv_body.show();
+                    
+                    $(".js-indicator-body-a").removeClass('bg-10');
+                    $(".js-indicator-body-a").removeClass('ig_2');
+                    currentIndicator_body = $(".js-indicator-body").siblings().first();
+                    currentIndicator_body.children(0).addClass('bg-10');
+                    currentIndicator_body.children(0).addClass('ig-2');
+                    currentIndicator_body.children(0).removeClass('bg-9');
+                    currentIndicator_body.children(0).removeClass('is_4');
+    
                     
                     $('#one-body-carousel').swipe( {
                       allowPageScroll:"vertical",
@@ -234,3 +234,23 @@
        }
      
     })(jQuery);
+
+
+
+    function selectCDiv(index) {
+        $(".one-body-content").siblings().hide();
+        currentDiv_body = $(".one-body-content").siblings().eq(index);
+        currentDiv_body.show();
+        
+        $(".js-indicator-body-a").removeClass('bg-10');
+        $(".js-indicator-body-a").removeClass('ig_2');
+        $(".js-indicator-body-a").addClass('bg-9');
+        $(".js-indicator-body-a").addClass('is_4');
+                            
+        currentIndicator_body = $(".js-indicator-body").siblings().eq(index);
+        currentIndicator_body.children(0).addClass('bg-10');
+        currentIndicator_body.children(0).addClass('ig-2');
+        currentIndicator_body.children(0).removeClass('bg-9');
+        currentIndicator_body.children(0).removeClass('is_4');
+    
+    }

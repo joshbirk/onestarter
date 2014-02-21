@@ -27,10 +27,7 @@
                           }
 
                           $('body').css('margin-right','10px');
-                          if(Sfdc) {
-                            Sfdc.canvas.client.resize({height : "1000px", width : "900px"});
-                            console.log(Sfdc.canvas.client.size());
-                          }
+
                         }
                         if(this.location == 'app') {
                           $('body').css('margin','10px');
@@ -104,12 +101,12 @@
                              $('#dyn_one_submit').click(callback);
 
                         } else { //one.app
-                          setTimeout(function () {
+
                              Sfdc.canvas.publisher.publish({name: "publisher.setValidForSubmit", payload:"true"});
                              Sfdc.canvas.publisher.subscribe({name: "publisher.post", onData:function(e) {
                                 callback();
                              }});
-                            },500); 
+
                         }
                        
                     

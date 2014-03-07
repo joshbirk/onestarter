@@ -35,7 +35,38 @@ You can just have:
 </script>
 ```
 
-And style the div using OneStarter.  The plugin also includes the ability to mimic or control various S1 navigation points, including:
+And style the div using OneStarter.  There is now a rudimentary attempt to restyle pageblocks, so:
+
+```html
+<script>
+    $(document).ready(function() {
+    	$('div[id*="form-panel"]').oneStarter('app');
+    })
+
+
+    </script>
+
+    <apex:outputPanel id="form-panel" layout="block">
+		<apex:form>
+			<apex:pageBlock title="{!account_detail.name}" mode="edit">
+            <apex:pageBlockButtons>
+                <apex:commandButton value="Save" action="{!save}" /> <apex:commandButton value="Cancel" action="{!save}" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="My Content Section" columns="1">
+                <apex:inputField value="{!account_detail.phone}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:outputPanel rendered="{!showBack}">
+			<apex:commandButton value="Back" />
+		</apex:outputPanel>
+		</apex:form>
+
+	</apex:outputPanel>
+```
+
+Will be styled in a mobile friendly manner using the S1 CSS.
+
+The plugin also includes the ability to mimic or control various S1 navigation points, including:
 
 * Enabling / Disabling the Submit
 * Closing an Action

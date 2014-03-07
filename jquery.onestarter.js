@@ -35,6 +35,26 @@
                           }
                         this.element.addClass('one-app-dynamic');
 
+                        //remove conflicting VF styles  
+                        $('.one-app-dynamic div.bPageBlock').wrap("<article class='padded'></article>");
+                        $('.one-app-dynamic div.pbSubheader').css('border-top', '1px solid black');
+                        $('.one-app-dynamic div.pbSubheader').css('margin-top', '5px');
+                        $('.one-app-dynamic div.pbSubheader').css('padding-top', '5px');
+                        
+                        $('.one-app-dynamic div').removeClass('bPageBlock brandSecondaryBrd bEditBlock secondaryPalette pbSubheader brandTertiaryBgr first tertiaryPalette');
+                        $('.one-app-dynamic .pbSubExtra').hide();
+
+                        //update existing VF styles
+                        $('.one-app-dynamic table').css('width','100%');
+                        $('.one-app-dynamic td.pbTitle').css('width','50%');
+                        $('.one-app-dynamic td.pbButton').css('width','50%');
+                        $('.one-app-dynamic td.pbButton').css('text-align','right');
+                        $('.one-app-dynamic th.labelCol').css('text-align','right');
+                        $('.one-app-dynamic th.labelCol').css('padding-right','5px');
+                        $('.one-app-dynamic th.labelCol label').addClass('field-label');
+    
+
+
                         //font styles
                         $('.one-app-dynamic .simple-bold').addClass('man f3 text-color-1 fw-semibold');
 

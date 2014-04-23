@@ -92,7 +92,7 @@ To apply the baseline CSS to your page, wrap your content in a single div and th
 ```javascript
 	$(document).ready(function() {
    		
-       	s1 = $('div#one-app').oneStarter('global-action');
+       	$('div#one-app').oneStarter('global-action');
 
      });
 ```	
@@ -110,15 +110,17 @@ OneStarter can typically style base HTML elements like H1 and input fields, ther
 
 
 ## Interacting with the Submit Button
-The plugin returns an object which includes methods for enabling and disabling the Submit button found in Salesforce1 for global and record level actions.  In the desktop browser, a submit button will be created for the record action (or removed on disable).  The enable method can take a callback to handle the submission itself.  For instance:
+The plugin returns an object which includes methods for enabling and disabling the Submit button found in Salesforce1 for global and record level actions.  In the desktop browser, a submit button will be created for the record action (or removed on disable).  The enable method can take a callback to handle the submission itself.  
+
+For instance:
 
 ```javascript
  $(document).ready(function() {
    		
-       	s1 = $('div#one-app').oneStarter('record-action').enableSubmit(function() {
+       		$('div#one-app').oneStarter('record-action').enableSubmit(function() {
             EmailScorecard.createEmail("{!Scorecard__c.Id}",function(res, mes) {
-         			    s1.close();
-                		s1.disableSubmit();
+         			    oneStarter.close();
+                		oneStarter.disableSubmit();
         		    }); 
             });
             
@@ -166,8 +168,8 @@ Generating the divs is another method off the oneStarter return object.  Nest di
 And then call the carousel method:
 
 ```javascript
-s1 = $('div#one-app').oneStarter('global-action');
-s1.carousel($('div#one-carousel'));
+$('div#one-app').oneStarter('global-action');
+oneStarter.carousel($('div#one-carousel'));
 ```
 
 

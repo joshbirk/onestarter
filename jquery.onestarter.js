@@ -1,5 +1,9 @@
+//generate a new global variable to hold the result object
+
+var oneStarter = {};
+
 //this is the plugin / base code
-    (function($){
+(function($){
        $.fn.oneStarter = function(location){
                 function _s1(el,location) {
                   this.element = el;
@@ -121,12 +125,13 @@
                              $('#dyn_one_submit').click(callback);
 
                         } else { //one.app
-
+                          var window_callback = callback;
+                          window.setTimeout(function() {
                              Sfdc.canvas.publisher.publish({name: "publisher.setValidForSubmit", payload:"true"});
                              Sfdc.canvas.publisher.subscribe({name: "publisher.post", onData:function(e) {
-                                callback();
+                                window_callback();
                              }});
-
+                            },1000);
                         }
                        
                     
@@ -247,9 +252,9 @@
                         fingers:'all'
                     });
                } 
-              var js1 = new _s1(this,location);
-              js1.overrideStyle();
-              return js1;
+              oneStarter = new _s1(this,location);
+              oneStarter.overrideStyle();
+              return oneStarter;
            
        }
      

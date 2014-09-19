@@ -192,11 +192,14 @@ var oneStarter = {};
                     currentIndicator_body.children(0).addClass('ig-2');
                     currentIndicator_body.children(0).removeClass('bg-9');
                     currentIndicator_body.children(0).removeClass('is_4');
-    
+                    
+                    $(":radio").addClass("noSwipe");
+                    $(":checkbox").addClass("noSwipe");
+                    
                     
                     $('#one-body-carousel').swipe( {
                       allowPageScroll:"vertical",
-                      excludedElements: "",
+                      excludedElements: ":radio,:checkbox",
                       swipe:function(event, direction, distance, duration, fingerCount) {
                          if(direction == 'left') {
                             $(".one-body-content").siblings().hide();
@@ -248,7 +251,7 @@ var oneStarter = {};
                           }
                           //    event.preventDefault();
                         },
-                        threshold:100,
+                        threshold:120,
                         fingers:'all'
                     });
                } 

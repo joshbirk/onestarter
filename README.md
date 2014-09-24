@@ -1,5 +1,10 @@
 # OneStarter
 
+<a href=https://githubsfdeploy.herokuapp.com/app/githubdeploy/joshbirk/onestarter>
+<img alt="Deploy" src="https://lh4.googleusercontent.com/-xz3vlir-4K0/VCF9wfSf7XI/AAAAAAAABbw/iQtyleZZP4Y/w151-h28-no/index.png">
+</a>
+
+
 A jQuery plugin for easily making HTML appear in the style of Salesforce1.  This ReadMe offers a quick start, you can also browse the `examples` directory for examples of using it in Visualforce, and the `staticresources` directory provides the necessary files to run (including TouchSwipe, etc).
 
 *Update*: The Proxima fonts have been removed at the request of the authors due to licensing conflicts.  I'll be trying to figure out how to properly point OneStarter to the SF hosted ones while in Visualforce.  You can purchase Proxima Nova [here](https://www.fontspring.com/fonts/mark-simonson-studio/proxima-nova-soft).
